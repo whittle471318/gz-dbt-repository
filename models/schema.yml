@@ -173,6 +173,14 @@ models:
         description: total number of products ordered on date of row
         tests:
           - not_null
+  - name: finance_campaigns_day
+    description: to add advertising costs to finance_days model to analyze ad campaigns on a daily basis
+    columns:
+      - name: date_date
+        description: date of advertising
+        tests:
+          - unique
+          - not_null
 sources:
   - name: raw
     schema: gz_raw_data
