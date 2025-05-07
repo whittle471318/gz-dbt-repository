@@ -205,3 +205,56 @@ sources:
             description: logistics cost of order
           - name: ship_cost
             description: shipping cost of order
+      - name: adwords
+        identifier: raw_gz_adwords
+        description: adwords campaign data
+        columns:
+          - name: date_date
+            description: campaign date
+          - name: paid_source
+            description: company where the ad campaign was run
+          - name: campaign_key
+            description: campaign identifier
+        tests:
+          - unique:
+              column_name: "(date_date || '_' || campaign_key)"
+      - name: bing
+        identifier: raw_gz_bing
+        description: bing campaign data
+        columns:
+          - name: date_date
+            description: campaign date
+          - name: paid_source
+            description: company where the ad campaign was run
+          - name: campaign_key
+            description: campaign identifier
+        tests:
+          - unique:
+              column_name: "(date_date || '_' || campaign_key)"
+      - name: criteo
+        identifier: raw_gz_criteo
+        description: criteo campaign data
+        columns:
+          - name: date_date
+            description: campaign date
+          - name: paid_source
+            description: company where the ad campaign was run
+          - name: campaign_key
+            description: campaign identifier
+        tests:
+          - unique:
+              column_name: "(date_date || '_' || campaign_key)"
+      - name: facebook
+        identifier: raw_gz_facebook
+        description: facebook campaign data
+        columns:
+          - name: date_date
+            description: campaign date
+          - name: paid_source
+            description: company where the ad campaign was run
+          - name: campaign_key
+            description: campaign identifier
+        tests:
+          - unique:
+              column_name: "(date_date || '_' || campaign_key)"
+ 
