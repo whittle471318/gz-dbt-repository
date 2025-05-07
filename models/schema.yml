@@ -122,7 +122,14 @@ models:
           - not_null
     tests:
       - unique: 
-          column_name: "(date_date || '_' || campaign_key)"    
+          column_name: "(date_date || '_' || campaign_key)"
+  - name: int_campaigns_day
+    description: ad costs, impressions and clicks by day
+    columns:
+      - name: date_date
+        description: date of ad campaigns
+        tests:
+          - unique
   - name: finance_days
     description: to model sales and product data at a daily grnaularity
     columns:
