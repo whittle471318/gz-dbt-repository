@@ -109,6 +109,20 @@ models:
         description: difference between revenue earned and purchase cost of an order (revenue - purchase_cost)
         tests:
           - not_null
+  - name: int_campaigns
+    description: union of all raw campaign date from 4 sources
+    columns:
+      - name: date_date
+        description: date of campaign
+        tests:
+          - not_null
+      - name: campaign_key
+        description: campaign id
+        tests:
+          - not_null
+    tests:
+      - unique: 
+          column_name: "(date_date || '_' || campaign_key)"    
   - name: finance_days
     description: to model sales and product data at a daily grnaularity
     columns:
