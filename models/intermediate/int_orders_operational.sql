@@ -24,6 +24,7 @@ SELECT
     revenue,
     purchase_cost,
     shipping_fee,
-    logcost
+    logcost,
+    ship_cost
 FROM margin_ship_join
 ORDER BY orders_id desc

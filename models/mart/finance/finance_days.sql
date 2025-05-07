@@ -8,7 +8,8 @@ SELECT
     SUM(purchase_cost) AS purchase_cost,
     SUM(shipping_fee) AS shipping_fee,
     SUM(logcost) AS logcost,
-    SUM(quantity) AS quantity
+    SUM(quantity) AS quantity,
+    SUM(ship_cost) AS ship_cost
 FROM {{ ref('int_orders_operational') }}
 GROUP BY date_date
 ORDER BY date_date desc)
@@ -23,5 +24,6 @@ ROUND(operational_margin,2) AS operational_margin,
 ROUND(purchase_cost,2) AS purchase_cost,
 ROUND(shipping_fee,2) AS shipping_fee,
 ROUND(logcost,2) AS logcost,
+ROUND(ship_cost,2) AS ship_cost,
 quantity
 FROM daily_agg
